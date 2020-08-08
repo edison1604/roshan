@@ -1,0 +1,27 @@
+def iP(r):
+    if r <=1 :
+        return False
+    if r <=3:
+        return True
+    else:
+        for a in range(3,r):
+            if(r%a==0):
+                return False
+        return True
+
+Dee,Pee=map(int,input().split())
+c1=0
+Hee=Dee/Pee
+Nee=Hee
+
+while Nee>1:
+    j=0
+    cp=0
+    while not False:
+        if iP(int((j*Hee)+Nee)) and ((j*Hee)+Nee)<=Dee:
+            cp=cp+1
+        if j==(Pee-1): break
+        j+=1
+    if cp == Pee: c1+=1       
+    Nee-=1
+print(c1,end="")
